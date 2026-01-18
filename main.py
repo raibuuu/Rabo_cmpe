@@ -1,11 +1,11 @@
-import sys
 from math import sqrt, pi
+import sys
+import time
 
 def run_cli():
-    print("=" * 50)
+    print("==============================================================")
     print("3D SHAPE VOLUME CALCULATOR (CLI Mode)")
-    print("=" * 50)
-
+    print("==============================================================")
     print("Available Shapes:")
     print("1. Cuboid (Rectangular Prism)")
     print("2. Pyramid (Right Rectangular)")
@@ -19,18 +19,17 @@ def run_cli():
 
     while True:
         try:
-            choice = input("\nSelect shape (1-9): ").strip()
-
+            choice = input("Select shape (1-9): ")
             if choice == "9":
-                print("Goodbye!")
+                print("POWER OFF")
+                time.sleep(1)
                 break
-
-            if choice not in ["1", "2", "3", "4", "5", "6", "7", "8"]:
+            if choice not in ("1", "2", "3", "4", "5", "6", "7", "8"):
                 print("Invalid choice! Please enter 1-9.")
                 continue
 
             # Get unit
-            unit = input("Enter unit (cm, m, inches, etc.): ").strip()
+            unit = input("Enter unit (cm, m, inches, etc.): ")
 
             # Calculate based on choice
             if choice == "1":
@@ -85,13 +84,10 @@ def run_cli():
                 shape_name = "Hexagonal Prism"
 
             print(f"✓ Volume of {shape_name}: {volume:.4f} {unit}³")
-            print("-" * 30)
+            print("==============================================================")
 
         except ValueError:
             print("Invalid input! Please enter valid numbers.")
-        except KeyboardInterrupt:
-            print("Exiting...")
-            break
 
 
 def main():
@@ -99,18 +95,16 @@ def main():
     print("1. Open the Calculator")
     print("2. Exit")
 
-    try:
-        choice = input("\nSelect mode (1-2): ").strip()
-
+    while True:
+        choice = input("Select mode (1-2): ")
         if choice == "1":
             run_cli()
         elif choice == "2":
-            print("Goodbye!")
+            print("POWER OFF")
+            time.sleep(1)
+            sys.exit()
         else:
-            print("Invalid choice. Please run again.")
-
-    except KeyboardInterrupt:
-        print("\nProgram terminated.")
+            print("Invalid input! Please enter valid numbers.")
 
 
 if __name__ == "__main__":
