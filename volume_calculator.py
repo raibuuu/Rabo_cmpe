@@ -2,7 +2,7 @@ from math import sqrt, pi
 
 print("=" * 50)
 print("3D SHAPE VOLUME CALCULATOR")
-print("=" * 50)
+print("==============================================================")
 print("Select operation.")
 print("1. Cuboid (Rectangular Prism)")
 print("2. Pyramid (Right Rectangular)")
@@ -13,19 +13,19 @@ print("6. Ellipsoid")
 print("7. Torus (Donut)")
 print("8. Hexagonal Prism")
 print("9. Exit")
-print("=" * 50)
+print("==============================================================")
 
 while True:
     choice = input("Enter choice (1/2/3/4/5/6/7/8/9): ")
     print("-" * 30)
 
     if choice == "9":
-        print("Goodbye!")
+        print("POWER OFF!")
         break
 
     # Get unit input
     if choice in ("1", "2", "3", "4", "5", "6", "7", "8"):
-        unit = input("Enter unit (cm, m, inches, ft, mm, etc.): ").strip()
+        unit = input("Enter unit (cm, m, inches, ft, mm, etc.): ")
         print("-" * 30)
 
     if choice == "1":
@@ -82,4 +82,4 @@ while True:
     else:
         print("Invalid Input! Please enter 1-8 or 9 to exit.")
 
-    print("=" * 50)
+    print("==============================================================")
